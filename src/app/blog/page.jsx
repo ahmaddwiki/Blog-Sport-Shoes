@@ -1,6 +1,4 @@
 // BlogPage.jsx
-// import CardList from "../../components/cardList/CardList"; // Ensure this path is correct and matches the actual file casing
-// import CardList from "../../components/CardList/CardList";
 import CardList from "../../components/CardList/CardList";
 
 
