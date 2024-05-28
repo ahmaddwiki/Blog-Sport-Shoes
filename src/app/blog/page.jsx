@@ -1,6 +1,5 @@
 // BlogPage.jsx
-import CardList from "../../components/CardList/CardList";
-
+import CardList from "../../components/cardList/CardList";
 
 import styles from "./blogPage.module.css";
 import Menu from "../../components/menu/Menu"; // Ensure this path is correct and matches the actual file casing

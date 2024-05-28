@@ -7,7 +7,7 @@ import Featured from "../components/featured/Featured";
 import CategoryList from "../components/categoryList/CategoryList";
 
 // import CardList from "@/components/cardList/CardList";
-import CardList from "../components/CardList/CardList";
+import CardList from "../components/cardList/CardList";
 
 // import Menu from "@/components/menu/Menu";
 import Menu from "../components/menu/Menu";
