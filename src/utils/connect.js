@@ -15,6 +15,8 @@ if (process.env.NODE_ENV === "production") {
 
 export default prisma;
 
+
+
 // connect.js
 
 // const { PrismaClient } = require("@prisma/client");
