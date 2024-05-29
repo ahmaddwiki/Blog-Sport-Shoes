@@ -9,7 +9,7 @@ import { format } from "date-fns";
 
 // Fetch data function
 const getData = async (slug) => {
-  const res = await fetch(`/api/posts/${slug}`, {
+  const res = await fetch(`${process.env.APP_URL}/api/posts/${slug}`, {
     cache: "no-store",
   });
 
@@ -24,7 +24,9 @@ const getData = async (slug) => {
 const SinglePage = async ({ params }) => {
   const { slug } = params;
   const data = await getData(slug);
-  const formattedDate = data?.createdAt ? format(new Date(data.createdAt), 'dd.MM.yyyy') : '';
+  const formattedDate = data?.createdAt
+    ? format(new Date(data.createdAt), "dd.MM.yyyy")
+    : "";
 
   return (
     <div className={styles.container}>

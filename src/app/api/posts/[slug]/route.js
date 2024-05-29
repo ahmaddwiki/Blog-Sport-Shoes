@@ -4,7 +4,7 @@ import prisma from "../../../../utils/connect";
 import { NextResponse } from "next/server";
 
 // GET SINGLE POST
-export const GET = async (req, { params }) => {
+export const GET = async (request, { params }) => {
   const { slug } = params;
 
   try {
