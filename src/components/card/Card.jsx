@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import styles from './card.module.css';
-import Link from 'next/link';
+import Image from "next/image";
+import styles from "./card.module.css";
+import Link from "next/link";
 
 const Card = ({ item }) => {
   return (
@@ -20,11 +20,11 @@ const Card = ({ item }) => {
       <div className={styles.textContainer}>
         <div className={styles.detail}>
           <span className={styles.date}>
-            {item.createdAt.substring(0, 10)} -{' '}
+            {item.createdAt.substring(0, 10)} -{" "}
           </span>
           <span className={styles.category}>{item.catSlug}</span>
         </div>
-        <Link href={`/posts/${item.slug}`}>
+        <Link href={`${process.env.APP_URL}/posts/${item.slug}`}>
           <h1>{item.title}</h1>
         </Link>
         <div

@@ -23,7 +23,7 @@ const fetcher = async (url) => {
 const Comments = ({ postSlug, post }) => {
   const { status } = useSession();
   const { data, mutate, isLoading } = useSWR(
-    `/api/comments?postSlug=${postSlug}`,
+    `${process.env.APP_URL}/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
@@ -31,7 +31,7 @@ const Comments = ({ postSlug, post }) => {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch("/api/comments", {
+      const res = await fetch("${process.env.APP_URL}/api/comments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

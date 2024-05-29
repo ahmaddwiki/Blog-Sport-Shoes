@@ -5,9 +5,12 @@ import Card from "../card/Card";
 
 const getData = async (page, cat) => {
   try {
-    const res = await fetch(`/api/posts?page=${page}&cat=${cat || ""}`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `${process.env.APP_URL}/api/posts?page=${page}&cat=${cat || ""}`,
+      {
+        cache: "no-store",
+      }
+    );
 
     if (!res.ok) {
       throw new Error("Failed");
@@ -21,7 +24,7 @@ const getData = async (page, cat) => {
 
 const CardList = async ({ page, cat }) => {
   const data = await getData(page, cat);
-  const { posts, count } = data || { posts: [], count: 0 }; 
+  const { posts, count } = data || { posts: [], count: 0 };
 
   const POST_PER_PAGE = 2;
 
