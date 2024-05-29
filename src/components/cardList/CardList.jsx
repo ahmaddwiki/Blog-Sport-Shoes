@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
@@ -22,7 +21,7 @@ const getData = async (page, cat) => {
 
 const CardList = async ({ page, cat }) => {
   const data = await getData(page, cat);
-  const { posts, count } = data || { posts: [], count: 0 };
+  const { posts, count } = data || { posts: [], count: 0 }; 
 
   const POST_PER_PAGE = 2;
 
