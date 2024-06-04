@@ -2,30 +2,27 @@ import Link from "next/link";
 import React from "react";
 import styles from "./menuCategories.module.css";
 
+const categories = [
+  { id: 1, name: 'Sneakers', slug: 'sneakers' },
+  { id: 2, name: 'Badminton', slug: 'badminton' },
+  { id: 3, name: 'Basket', slug: 'basket' },
+  { id: 4, name: 'Slipon', slug: 'slipon' },
+  { id: 5, name: 'Running', slug: 'running' },
+  { id: 6, name: 'Casual', slug: 'casual' },
+];
+
 const MenuCategories = () => {
   return (
     <div className={styles.categoryList}>
-      <Link
-        href="${process.env.APP_URL}/blog?cat=style"
-        className={`${styles.categoryItem} ${styles.sneakers}`}
-      >
-        Sneakers
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.badminton}`}>
-        Badminton
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.basket}`}>
-        Basket
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.slipon}`}>
-        Slipon
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.running}`}>
-        Running
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.casual}`}>
-        Casual
-      </Link>
+      {categories.map(item => (
+        <Link
+          href={`/blog?cat=${item.slug}`}
+          className={`${styles.category} ${styles[item.slug] || ""}`}
+          key={item.id}
+        >
+          {item.name}
+        </Link>
+      ))}
     </div>
   );
 };
